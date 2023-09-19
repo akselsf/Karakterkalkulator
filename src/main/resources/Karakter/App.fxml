@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+
+
+
+<?import java.lang.String?>
+
+
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+   minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0"
+   xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+   stylesheets="@../Karakter/App.css" fx:controller="Karakter.ui.Controller">
+   <children>
+      <AnchorPane id="navbarcontainer" prefHeight="74.0" prefWidth="800.0"
+         layoutY="0.0"
+         layoutX="0.0">
+         <children>
+            <Label layoutX="24.0" layoutY="13.0" id="navheader">Karakterkalkulator</Label>
+            <Button styleClass="navbutton" layoutX="490.0" layoutY="20.0" prefHeight="40.0"
+               prefWidth="140.0" onAction="#getFromFile">
+               Hent karakterer
+            </Button>
+            <Button styleClass="navbutton" layoutX="640.0" layoutY="20.0" prefWidth="140.0"
+               prefHeight="40.0" onAction="#saveToFile">
+               Lagre karakterer
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="panelcontainer" prefHeight="425.0" prefWidth="252.0"
+         layoutY="74.0"
+         layoutX="0.0">
+         <children>
+            <Label id="panelheader" layoutX="46.0" layoutY="24.0" prefHeight="23.0"
+               prefWidth="160.0">Legg til karakter</Label>
+            <Label styleClass="panelinputlabel" layoutX="46.0" layoutY="61.0" prefHeight="23.0"
+               prefWidth="160.0">Emne</Label>
+            <TextField fx:id="emnekodeinput" promptText="Emnekode" styleClass="panelinput"
+               layoutX="46.0" layoutY="84.0"
+               prefHeight="29.0"
+               prefWidth="163.0"></TextField>
+            <Label styleClass="panelinputlabel" layoutX="46.0" layoutY="121.0" prefHeight="23.0"
+               prefWidth="160.0">Karakter</Label>
+            <TextField fx:id="karakterinput" promptText="Karakter A-F" styleClass="panelinput"
+               layoutX="46.0"
+               layoutY="144.0" prefHeight="29.0"
+               prefWidth="163.0"></TextField>
+            <Button layoutY="183.0" layoutX="76.0" id="paneladdbutton" prefHeight="30.0"
+               prefWidth="100.0" onAction="#handleAddGradeClick">Legg til</Button>
+            <Label fx:id="errormessage" layoutX="46.0" layoutY="231.0" prefHeight="23.0" />
+            <Separator styleClass="separator" layoutY="230.0" layoutX="17.0"
+               prefHeight="0.5"
+               prefWidth="208.0" />
+            <Label styleClass="panelres_label" layoutX="30.0" layoutY="280.0" prefHeight="16.0"
+               prefWidth="60.0">Median</Label>
+            <Label fx:id="medianGrade" styleClass="panelresultlabel" layoutX="155.0" layoutY="280.0"
+               prefHeight="16.0"
+               prefWidth="40.0">0</Label>
+            <Label styleClass="panelres_label" layoutX="30.0" layoutY="303.0" prefHeight="16.0"
+               prefWidth="80.0">Gjennomsnitt</Label>
+            <Label fx:id="avgGrade" styleClass="panelresultlabel" layoutX="155.0" layoutY="303.0"
+               prefHeight="16.0"
+               prefWidth="40.0">0</Label>
+
+
+            <Label styleClass="panelres_label" layoutX="30.0" layoutY="326.0" prefHeight="16.0"
+               prefWidth="60.0">Høyest</Label>
+            <Label fx:id="bestGrade" styleClass="panelresultlabel" layoutX="155.0" layoutY="326.0"
+               prefHeight="16.0"
+               prefWidth="80.0">0</Label>
+            <Label styleClass="panelres_label" layoutX="30.0" layoutY="351.0" prefHeight="16.0"
+               prefWidth="60.0">Lavest</Label>
+            <Label fx:id="worstGrade" styleClass="panelresultlabel" layoutX="155.0" layoutY="351.0"
+               prefHeight="16.0"
+               prefWidth="80.0">0</Label>
+
+            <Label id="resultheader" layoutX="30.0" layoutY="245.0" prefHeight="23.0"
+               prefWidth="160.0">Resultat</Label>
+            <Separator styleClass="separator" layoutY="278.0" layoutX="126.0" prefHeight="100"
+               prefWidth="0.5" orientation="vertical" />
+
+
+         </children>
+      </AnchorPane>
+      <AnchorPane id="maincontainer" prefHeight="425.0" prefWidth="548.0"
+         layoutY="74.0"
+         layoutX="252.0">
+         <children>
+            <Label id="mainheader" layoutX="30.0" layoutY="17.0" prefHeight="18.0"
+               prefWidth="120.0">Karakterer</Label>
+
+            <Label id="sortlabel" layoutX="291.0" layoutY="20.0" prefHeight="24.0"
+               prefWidth="121.0">Sorter etter:</Label>
+
+            <ChoiceBox value="Emnekode stigende" prefHeight="26.0" prefWidth="109.0" layoutX="388.0"
+               layoutY="20.0" fx:id="sortChoice" onAction="#changeSort">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Karakter stigende" />
+                     <String fx:value="Karakter synkende" />
+                     <String fx:value="Emnekode stigende" />
+                     <String fx:value="Emnekode synkende" />
+                  </FXCollections>
+
+               </items>
+            </ChoiceBox>
+            <ScrollPane prefHeight="426.0" pannable="true" prefWidth="548.0" fx:id="gradesContainer"
+               id="gradescontainer" layoutX="0"
+               layoutY="60.0">
+
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+
+
+   </children>
+</AnchorPane>

@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+
+#navbarcontainer {
+  -fx-background-color: #fca311;
+}
+
+.navbutton {
+  -fx-background-color: #14213d;
+  -fx-background-radius: 13px;
+  -fx-text-fill: #ffffff;
+  -fx-font-size: 13px;
+  -fx-font-family: "Inter", sans-serif;
+  -fx-width: 100px;
+}
+
+.navbutton:hover {
+  -fx-cursor: hand;
+}
+
+#panelcontainer {
+  -fx-background-color: #e5e5e5;
+}
+
+#panelheader {
+  -fx-font-size: 20px;
+  -fx-font-family: "Inter", sans-serif;
+  -fx-text-fill: #000000;
+}
+.panelinputlabel {
+  -fx-font-size: 13px;
+  -fx-font-family: "Inter", sans-serif;
+  -fx-text-fill: #000000;
+}
+.panelinput {
+  -fx-font-size: 10px;
+  -fx-text-fill: #000000;
+  -fx-background-radius: 10px;
+  -fx-border-width: 0.5px;
+  -fx-border-color: #000000;
+  -fx-bakground-color: #e5e5e5;
+  -fx-border-radius: 10px;
+}
+
+#paneladdbutton {
+  -fx-background-color: #14213d;
+  -fx-background-radius: 13px;
+  -fx-text-fill: #ffffff;
+  -fx-font-family: "Inter", sans-serif;
+}
+
+#paneladdbutton:hover {
+  -fx-cursor: hand;
+}
+
+.separator {
+  -fx-background-color: #fca311;
+}
+
+#resultheader {
+  -fx-font-size: 16px;
+  -fx-font-family: "Inter", sans-serif;
+  -fx-text-fill: #000000;
+}
+#maincontainer {
+  -fx-background-color: #ffffff;
+}
+
+#mainheader {
+  -fx-font-size: 20px;
+  -fx-font-family: "Inter", sans-serif;
+  -fx-text-fill: #000000;
+}
+
+#navheader {
+  -fx-text-fill: #000000;
+  -fx-font-size: 40px;
+  -fx-font-family: "Inter", sans-serif;
+}
+
+#gradescontainerpane {
+  -fx-background-color: transparent;
+  -fx-background: transparent;
+}
+#gradescontainer {
+  -fx-background-color: transparent;
+  -fx-background: transparent;
+  -fx-border-width: 0;
+}
+
+.gradepane {
+  -fx-background-color: #e3e3e3;
+  -fx-background-radius: 40px;
+  -fx-border-width: 0;
+}
+
+.gradepanelabel {
+  -fx-text-fill: #14213d;
+  -fx-font-size: 15px;
+  -fx-font-family: "Inter", sans-serif;
+}
+.deletebtn {
+  -fx-text-fill: red;
+  -fx-font-family: "Inter", sans-serif;
+  -fx-font-size: 12px;
+}
+
+.deletebtn:hover {
+  -fx-cursor: hand;
+}
+
+#sortlabel {
+  -fx-text-fill: #000000;
+  -fx-font-size: 15px;
+  -fx-font-family: "Inter", sans-serif;
+}
